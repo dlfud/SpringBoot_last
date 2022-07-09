@@ -40,8 +40,8 @@ public class UserHomeController {
 	
 	@RequestMapping("/user/home/setCount")
 	@ResponseBody
-	public String setCount() {
-		count = 0;
-		return "count 값이 0으로 초기화 되었습니다.";
+	public String setCount(int count) {
+		this.count = count;
+		return "count 값이 " + this.count + "으로 초기화 되었습니다.";
 	}
 }

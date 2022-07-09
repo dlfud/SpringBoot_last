@@ -31,16 +31,16 @@ public class UserHomeController {
 		return "또 만나요.";
 	}
 	
-	@RequestMapping("/user/home/main4")
+	@RequestMapping("/user/home/getCount")
 	@ResponseBody
-	public int showMain4() {
+	public int getCount() {
 		count++;
 		return count;
 	}
 	
-	@RequestMapping("/user/home/main4")
+	@RequestMapping("/user/home/setCount")
 	@ResponseBody
-	public String showMain5() {
+	public String setCount() {
 		count = 0;
 		return "count 값이 0으로 초기화 되었습니다.";
 	}

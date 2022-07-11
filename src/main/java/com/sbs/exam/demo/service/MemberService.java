@@ -16,10 +16,17 @@ public class MemberService {
 	}
 	
 	public int join(String loginId, String loginPw, String name, String nickname, String cellphoneNo, String email) {
+		//로그인 중복체크
 		Member oldMember = memberRepository.getMemberByLoginId(loginId);
 		
 		if(oldMember != null) {
 			return -1;
+		}
+		
+		//이름 이메일 중복체크
+		oldMember = memberRepository.getMemberNameEmail(name, email);
+		if(oldMember != null) {
+			return -2;
 		}
 		
 		memberRepository.join(loginId, loginPw, name, nickname, cellphoneNo, email);
